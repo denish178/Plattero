@@ -1,57 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-/* ---------- CSS Variables ---------- */
-:root {
-  --font-main: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --text-color: #262626;
-  --bg-color: #ffffff;
-  --transition: 0.3s ease;
-}
-
-/* ---------- Reset ---------- */
 *,
 *::before,
 *::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: var(--font-main);
+  font-family: 'Outfit', sans-serif;
 }
 
-/* ---------- Base ---------- */
 html {
   scroll-behavior: smooth;
 }
 
 body {
   min-height: 100vh;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ---------- Links ---------- */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* ---------- App Wrapper ---------- */
 .app {
-  width: min(80%, 1400px);
+  width: 80%;
   margin: auto;
 }
 
-/* ---------- Animations ---------- */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(8px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
