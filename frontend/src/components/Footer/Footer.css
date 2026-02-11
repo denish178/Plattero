@@ -6,6 +6,8 @@
   --transition: 0.3s ease;
 }
 
+/* ================= FOOTER ================= */
+
 .footer {
   color: var(--footer-text);
   background-color: var(--footer-bg);
@@ -15,9 +17,12 @@
   gap: 32px;
   padding: 60px 8vw 25px;
   margin-top: 100px;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.6s ease;
 }
 
-/* ---------- Main Grid ---------- */
+/* ================= GRID LAYOUT ================= */
+
 .footer-content {
   width: 100%;
   max-width: 1400px;
@@ -26,7 +31,8 @@
   gap: 70px;
 }
 
-/* ---------- Sections ---------- */
+/* ================= SECTIONS ================= */
+
 .footer-content-left,
 .footer-content-center,
 .footer-content-right {
@@ -56,31 +62,40 @@
   margin-bottom: 10px;
 }
 
-/* Lists */
-.footer-content-left li,
-.footer-content-center li,
-.footer-content-right li {
+/* ================= LISTS ================= */
+
+.footer-content ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer-content li {
   list-style: none;
+}
+
+/* Links */
+.footer-content a {
+  text-decoration: none;
   font-size: clamp(13px, 1vw, 14px);
   cursor: pointer;
   color: #d9d9d9;
   transition: color var(--transition), transform 0.2s ease;
+  display: inline-block;
 }
 
-.footer-content-left li:hover,
-.footer-content-center li:hover,
-.footer-content-right li:hover {
+.footer-content a:hover {
   color: var(--footer-accent);
   transform: translateX(3px);
 }
 
-/* Keyboard accessibility */
-.footer-content li:focus-visible {
+/* Accessibility */
+.footer-content a:focus-visible {
   outline: 2px dashed var(--footer-accent);
   outline-offset: 4px;
 }
 
-/* ---------- Social Icons ---------- */
+/* ================= SOCIAL ICONS ================= */
+
 .foot-social-icons {
   display: flex;
   gap: 16px;
@@ -98,29 +113,41 @@
   opacity: 0.85;
 }
 
-/* ---------- Divider ---------- */
+/* ================= DIVIDER ================= */
+
 .footer hr {
   width: 100%;
   max-width: 1400px;
   height: 1px;
   margin: 25px 0 15px;
-  background: linear-gradient(to right,
-      transparent,
-      #555,
-      transparent);
+  background: linear-gradient(to right, transparent, #555, transparent);
   border: none;
 }
 
-/* ---------- Copyright ---------- */
+/* ================= COPYRIGHT ================= */
+
 .footer-copyright {
   font-size: 13px;
   color: #aaaaaa;
   text-align: center;
 }
 
-/* ================= Responsive ================= */
+/* ================= ANIMATION ================= */
 
-/* Tablets */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* ---------- Tablets ---------- */
 @media (max-width: 1024px) {
   .footer-content {
     grid-template-columns: 1.5fr 1fr 1fr;
@@ -128,7 +155,7 @@
   }
 }
 
-/* Mobile */
+/* ---------- Mobile ---------- */
 @media (max-width: 768px) {
   .footer {
     padding: 50px 6vw 20px;
@@ -150,14 +177,18 @@
     justify-content: center;
   }
 
-  .footer-content li:hover {
+  .footer-content a:hover {
     transform: none;
   }
 }
 
-/* Small Phones */
+/* ---------- Small Phones ---------- */
 @media (max-width: 480px) {
   .footer-content-left img {
     width: 130px;
+  }
+
+  .footer {
+    gap: 24px;
   }
 }
