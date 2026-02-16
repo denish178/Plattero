@@ -19,7 +19,7 @@ const PlaceOrder = () => {
   };
 
   return (
-    <form className="place-order">
+    <form className="place-order" onSubmit={handleSubmit}>
       <div className="place-order-left">
         <h2 className="title">Delivery Information</h2>
         <div className="multi-fields">
@@ -58,7 +58,6 @@ const PlaceOrder = () => {
               <b>${total.toFixed(2)}</b>
             </div>
             <button
-              onSubmit={handleSubmit}
               type="submit"
               disabled={subtotal === 0}
               className={subtotal === 0 ? "disabled-btn" : "place-order-btn"}
