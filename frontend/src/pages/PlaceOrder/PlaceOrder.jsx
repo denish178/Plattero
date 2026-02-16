@@ -11,6 +11,13 @@ const PlaceOrder = () => {
   const deliveryFee = subtotal === 0 ? 0 : 2;
   const total = subtotal + deliveryFee;
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (subtotal > 0) {
+      navigate("/success");
+    }
+  };
+
   return (
     <form className="place-order">
       <div className="place-order-left">
@@ -51,6 +58,7 @@ const PlaceOrder = () => {
               <b>${total.toFixed(2)}</b>
             </div>
             <button
+              onSubmit={handleSubmit}
               type="submit"
               disabled={subtotal === 0}
               className={subtotal === 0 ? "disabled-btn" : "place-order-btn"}
